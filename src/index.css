@@ -20,3 +20,15 @@
     transform: translateX(-50%);
   }
 }
+.wiggle {
+  animation: wiggle 0.3s infinite ease-in-out;
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}

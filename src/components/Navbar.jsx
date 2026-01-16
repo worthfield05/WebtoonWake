@@ -1,7 +1,6 @@
 import { Coffee, Moon, Sun } from "lucide-react";
-import React from "react";
 
-const Navbar = ({ isDark, setIsDark }) => {
+const Navbar = ({ scrollToSection, isDark, setIsDark }) => {
   return (
     <>
       <div className="text-white bg-[#1A1A1A] z-60 py-2 overflow-hidden sticky top-0 border-b-4 border-black">
@@ -19,20 +18,32 @@ const Navbar = ({ isDark, setIsDark }) => {
               <Coffee size={24} strokeWidth={3} />
             </div>
             <span className="text-2xl font-black tracking-tighter hidden sm:inline">
-              F&W
+              W&W
             </span>
           </div>
           <ul className="flex gap-4 sm:gap-6 font-black uppercase text-xs sm:text-sm">
-            <li className="hover:text-[#FF5757]  hover:scale-110 cursor-pointer transition-all">
+            <li
+              onClick={() => scrollToSection("menu")}
+              className="hover:text-[#FF5757]  hover:scale-110 cursor-pointer transition-all"
+            >
               Menu
             </li>
-            <li className="hover:text-[#FF5757] hover:scale-110 cursor-pointer transition-all">
+            <li
+              onClick={() => scrollToSection("sticker")}
+              className="hover:text-[#FF5757] hover:scale-110 cursor-pointer transition-all"
+            >
               Vibe
             </li>
-            <li className="hover:text-[#FF5757] hover:scale-110 cursor-pointer transition-all">
+            <li
+              onClick={() => scrollToSection("rewards")}
+              className="hover:text-[#FF5757] hover:scale-110 cursor-pointer transition-all"
+            >
               Level Up
             </li>
-            <li className="hover:text-[#FF5757] hover:scale-110 cursor-pointer transition-all">
+            <li
+              onClick={() => scrollToSection("locate")}
+              className="hover:text-[#FF5757] hover:scale-110 cursor-pointer transition-all"
+            >
               Locate
             </li>
           </ul>
