@@ -1,0 +1,10 @@
+export { default as Navbar } from "./Navbar";
+export { default as Features } from "./Features";
+export { default as Hero } from "./Hero";
+export { default as Locate } from "./Locate";
+export { default as Loading } from "./Loading";
+export { default as Menu } from "./Menu";
+export { default as Rewards } from "./Rewards";
+export { default as Sticker } from "./Sticker";
+export { default as Testimonials } from "./Testimonials";
+export { default as Footer } from "./Footer";

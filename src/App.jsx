@@ -1,22 +1,44 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Footer from "./components/Footer";
-import Testimonials from "./components/Testimonials";
-import Locate from "./components/Locate";
-import Sticker from "./components/Sticker";
-import Menu from "./components/Menu";
-import Rewards from "./components/Rewards";
+import { useEffect, useState } from "react";
+import {
+  Features,
+  Footer,
+  Hero,
+  Loading,
+  Locate,
+  Menu,
+  Navbar,
+  Rewards,
+  Sticker,
+  Testimonials,
+} from "./components";
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const handlePageLoad = () => {
+      setTimeout(() => setLoading(false), 500);
+    };
+    if (document.readyState === "complete") {
+      handlePageLoad();
+    } else {
+      window.addEventListener("load", handlePageLoad);
+    }
+    return () => {
+      window.removeEventListener("load", handlePageLoad);
+    };
+  }, []);
   function scrollToSection(id) {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   }
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div
       className={`min-h-screen transition-colors duration-700 font-mono selection:bg-black selection:text-white ${
